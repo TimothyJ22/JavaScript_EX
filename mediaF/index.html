@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calcule caso você esteja aprovado, está de exame ou foi reprovado.</h1>
+    <p>Informe a primeira nota: 
+        <input type="number" id="n1">
+    </p>
+    
+
+    <p>Informe a segunda nota:
+        <input type="number" id="n2">
+    </p>
+    
+
+    <p>Informe a terceira nota:
+        <input type="number" id="n3">
+    </p>
+
+    <button type="submit" onclick="avaliar()">Avaliar</button>
+    <br>
+    <label id="notafinal"></label>
+    <br>
+    <label id="notapassar"></label>
+
+    <script>
+        function avaliar(){
+            var nt1 = parseFloat(document.getElementById('n1').value)
+            var nt2 = parseFloat(document.getElementById('n2').value)
+            var nt3 = parseFloat(document.getElementById('n3').value)
+
+            media = (nt1 + nt2 + nt3)/3
+            document.getElementById('notafinal').innerText = media.toFixed(2).replace('.',',')
+            if (media >= 7){
+                alert('Você foi aprovado! Boas férias!')
+            }
+
+            else if(media < 7 && media >= 4){
+                mediaex = 10 - media
+                alert(`Você está de exame final, você precisará fazer o exame e tirar uma nota superior a: ${mediaex.toFixed(2).replace('.',',')}`)
+                document.getElementById('notapassar').innerText = mediaex.toFixed(2).replace('.',',')
+                
+            }
+
+            else{
+                alert('Você está reprovado! Se for chorar, manda áudio')
+            }
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação</title>
+</head>
+<body>
+    <h1>Validação de login e senha</h1>
+
+    <p>Login <input type="text" id="login"></p>
+    <p>Senha <input type="password" name="senha" id="senha"></p>
+    <p><button type="submit" onclick="validar()">Enviar</button></p>
+
+    <script>
+        function validar(){
+            var login = document.getElementById('login').value
+            var senha = document.getElementById('senha').value
+
+            if(login == 'admin' && senha == 'admin'){
+                alert('Usuário e senha corretos, bem vindo!')
+            }
+
+            else{
+                alert('Usuário e senha incorretos')
+            }
+        }
+    </script>
+</body>
+</html>
